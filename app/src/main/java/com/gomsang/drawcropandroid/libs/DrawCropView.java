@@ -1,7 +1,6 @@
 package com.gomsang.drawcropandroid.libs;
 
 import android.app.AlertDialog;
-import android.arch.lifecycle.SingleGeneratedAdapterObserver;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -61,7 +60,7 @@ public class DrawCropView extends View implements View.OnTouchListener {
         linePaint.setPathEffect(new DashPathEffect(new float[]{10, 20}, 0));
         linePaint.setStrokeWidth(5);
         linePaint.setShadowLayer(10.0f, 0.0f, 2.0f, 0xFF000000);
-        linePaint.setColor(Color.WHITE);
+        linePaint.setColor(Color.RED);
 
         drawCoordinates.clear();
         setOnTouchListener(this);
@@ -81,7 +80,7 @@ public class DrawCropView extends View implements View.OnTouchListener {
 
         if (targetOriginalBitmap != null) {
             // If target's original bitmap is bigger than view size, adjust size for fit
-            actualVisibleBitmap = scaleBitmapAndKeepRation(targetOriginalBitmap, canvas.getHeight(), canvas.getWidth());
+            actualVisibleBitmap = scaleBitmapAndKeepRation(targetOriginalBitmap, canvas.getHeight(), canvas.getWidth()-20);
             canvas.drawBitmap(actualVisibleBitmap, canvasWidth / 2 - actualVisibleBitmap.getWidth() / 2,
                     canvasHeight / 2 - actualVisibleBitmap.getHeight() / 2, null);
         } else {
