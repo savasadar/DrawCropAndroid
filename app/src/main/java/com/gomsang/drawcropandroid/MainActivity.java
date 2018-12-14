@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.gomsang.drawcropandroid.libs.CropActivity;
+
 import java.io.FileInputStream;
 
 public class MainActivity extends AppCompatActivity {

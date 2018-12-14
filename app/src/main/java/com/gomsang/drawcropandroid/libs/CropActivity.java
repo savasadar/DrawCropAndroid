@@ -1,4 +1,4 @@
-package com.gomsang.drawcropandroid;
+package com.gomsang.drawcropandroid.libs;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,9 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 
-import com.gomsang.drawcropandroid.libs.DrawCropView;
+import com.gomsang.drawcropandroid.R;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,7 +21,6 @@ public class CropActivity extends AppCompatActivity {
         setContentView(R.layout.activity_crop);
 
         final DrawCropView drawCropView = findViewById(R.id.cropView);
-        final ImageView imageView = findViewById(R.id.imageView);
 
         Uri data = getIntent().getData();
 
@@ -35,11 +33,6 @@ public class CropActivity extends AppCompatActivity {
 
         drawCropView.setImageBitmap(bitmap);
         drawCropView.setOnCropListener(result -> {
-            /*
-            imageView.bringToFront();
-            drawCropView.setVisibility(View.GONE);
-            imageView.setImageBitmap(result);
-            */
             try {
                 //Write file
                 String filename = "bitmap.png";
